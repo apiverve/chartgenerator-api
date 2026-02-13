@@ -9,50 +9,15 @@ const API_KEY = process.env.APIVERVE_API_KEY || 'YOUR_API_KEY_HERE';
 const API_URL = 'https://api.apiverve.com/v1/chartgenerator';
 
 /**
- * Make a POST request to the Chart Generator API
+ * Make a GET request to the Chart Generator API
  */
 async function callChartGeneratorAPI() {
   try {
-    // Request body
-    const requestBody &#x3D; {
-    &quot;type&quot;: &quot;bar&quot;,
-    &quot;data&quot;: {
-        &quot;labels&quot;: [
-            &quot;Q1&quot;,
-            &quot;Q2&quot;,
-            &quot;Q3&quot;,
-            &quot;Q4&quot;
-        ],
-        &quot;datasets&quot;: [
-            {
-                &quot;label&quot;: &quot;Users&quot;,
-                &quot;data&quot;: [
-                    50,
-                    60,
-                    70,
-                    180
-                ]
-            },
-            {
-                &quot;label&quot;: &quot;Revenue&quot;,
-                &quot;data&quot;: [
-                    100,
-                    200,
-                    300,
-                    400
-                ]
-            }
-        ]
-    }
-};
-
     const response = await fetch(API_URL, {
-      method: 'POST',
+      method: 'GET',
       headers: {
-        'x-api-key': API_KEY,
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(requestBody)
+        'x-api-key': API_KEY
+      }
     });
 
     // Check if response is successful
