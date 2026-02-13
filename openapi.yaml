@@ -1,19 +1,93 @@
 openapi: 3.0.4
 info:
   title: Chart Generator
-  description: Chart Generator is a simple tool for generating charts from data. It returns a URL to the generated image of the chart.
+  description: >-
+    Chart Generator creates beautiful chart images from your data. Supports bar,
+    line, pie, doughnut, radar, and polar area charts with customizable styling.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
     email: hello@apiverve.com
     url: https://apiverve.com/contact
-  version: 1.0.9
+  version: 1.0.0
 externalDocs:
   description: Learn more about APIVerve
   url: https://docs.apiverve.com?utm_source=openapi
 servers:
-- url: https://api.apiverve.com/
-paths: {}
+  - url: https://api.apiverve.com/
+paths:
+  /v1/chartgenerator:
+    post:
+      summary: Basic Chart
+      description: >-
+        Generate a chart with minimal configuration. Just provide type, labels,
+        and datasets with name/values. Colors are auto-assigned.
+      operationId: chartgenerator
+      parameters: []
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: status
+                  error:
+                    type: string
+                    description: error
+                  data:
+                    type: object
+                    description: data
+              example:
+                status: ok
+                error: null
+                data:
+                  id: 6a783c9c-f959-4a88-80cb-84580b8c788d
+                  format: .png
+                  expires: 1766010059346
+                  type: bar
+                  downloadURL: >-
+                    https://storage.googleapis.com/apiverve/APIData/chartgenerator/6a783c9c-f959-4a88-80cb-84580b8c788d.png?GoogleAccessId=635500398038-compute%40developer.gserviceaccount.com&Expires=1766010059&Signature=Iud%2B7hoPRtPbWoJXQAAnhN9nqUHObHQ7PaiJCtkWQzEzpMexPMRR3BIPKkwOUMAwT6YcNbvywgnLvU2SV7498rbp%2FZbktuAR3Ok1E3O6p4ZJJ4s%2FpW8HAZgIBJpDlPUQt%2FjulQLtwP2I2GUPVmgWheXitnWsWq1S3E2k4viysXwS8H2%2B8BBdxjS%2Bv1ruGXbqd4RpdzdLst4e9YtHGWNZuiaL8zX8%2FHA1zreyrewY2fpB4g0pHnh%2B3IDE48eIohb4HQoDc9vXy4s8sIoqLScmTLyxyq1pPYlak1n1PWdbLcz4TBr41JnLELzF%2BBwCkyrLts9dhisSseaIB7d4g4JQnw%3D%3D
+        '401':
+          description: Your request was not authorized, or your API Key was invalid
+        '404':
+          description: Requested resource was not found
+        '500':
+          description: A server error has occurred, try again later
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                type:
+                  type: string
+                  description: Chart type
+                labels:
+                  type: string
+                  description: Array of labels for the x-axis or chart segments
+                datasets:
+                  type: string
+                  description: Array of datasets with 'name' and 'values'
+                title:
+                  type: string
+                  description: Optional title displayed on the chart
+                width:
+                  type: integer
+                  description: Image width in pixels
+                height:
+                  type: integer
+                  description: Image height in pixels
+                format:
+                  type: string
+                  description: Output format
+              required:
+                - labels
+                - datasets
 components:
   securitySchemes:
     api_key:
@@ -21,4 +95,25 @@ components:
       name: x-api-key
       in: header
 security:
-- api_key: []
+  - api_key: []
+sampleRequest:
+  type: bar
+  labels:
+    - Q1
+    - Q2
+    - Q3
+    - Q4
+  datasets:
+    - name: Sales
+      values:
+        - 50
+        - 60
+        - 70
+        - 180
+    - name: Revenue
+      values:
+        - 100
+        - 200
+        - 300
+        - 400
+  title: Quarterly Report
