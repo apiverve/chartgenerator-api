@@ -11,45 +11,45 @@ namespace APIVerve.API.ChartGenerator
     public class ChartGeneratorQueryOptions
     {
         /// <summary>
-        /// The type of chart you want to generate (e.g. bar, line, pie)
-        /// Example: bar
+        /// Chart type
         /// </summary>
         [JsonProperty("type")]
         public string Type { get; set; }
 
         /// <summary>
-        /// The labels for the data points on the chart
-        /// Example: ["Q1", "Q2", "Q3", "Q4"]
+        /// Array of labels for the x-axis or chart segments
         /// </summary>
-        [JsonProperty("data[labels]")]
-        public string Data[labels] { get; set; }
+        [JsonProperty("labels")]
+        public string Labels { get; set; }
 
         /// <summary>
-        /// The label for the first dataset
-        /// Example: Users
+        /// Array of datasets with 'name' and 'values'
         /// </summary>
-        [JsonProperty("data[datasets][0][label]")]
-        public string Data[datasets][0][label] { get; set; }
+        [JsonProperty("datasets")]
+        public string Datasets { get; set; }
 
         /// <summary>
-        /// The data for the first dataset
-        /// Example: [50, 60, 70, 180]
+        /// Optional title displayed on the chart
         /// </summary>
-        [JsonProperty("data[datasets][0][data]")]
-        public string Data[datasets][0][data] { get; set; }
+        [JsonProperty("title")]
+        public string Title { get; set; }
 
         /// <summary>
-        /// The label for the second dataset (optional)
-        /// Example: Revenue
+        /// Image width in pixels
         /// </summary>
-        [JsonProperty("data[datasets][1][label]")]
-        public string Data[datasets][1][label] { get; set; }
+        [JsonProperty("width")]
+        public string Width { get; set; }
 
         /// <summary>
-        /// The data for the second dataset (optional)
-        /// Example: [100, 200, 300, 400]
+        /// Image height in pixels
         /// </summary>
-        [JsonProperty("data[datasets][1][data]")]
-        public string Data[datasets][1][data] { get; set; }
+        [JsonProperty("height")]
+        public string Height { get; set; }
+
+        /// <summary>
+        /// Output format
+        /// </summary>
+        [JsonProperty("format")]
+        public string Format { get; set; }
     }
 }
