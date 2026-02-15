@@ -1,6 +1,6 @@
 # Chart Generator Android SDK
 
-Chart Generator is a simple tool for generating charts from data. It returns a URL to the generated image of the chart.
+Chart Generator creates beautiful chart images from your data. Supports bar, line, pie, doughnut, radar, and polar area charts with customizable styling.
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 ![Platform](https://img.shields.io/badge/Platform-Android-green.svg)
@@ -26,7 +26,7 @@ Add the dependency:
 
 ```gradle
 dependencies {
-    implementation 'com.github.apiverve:chartgenerator-api:1.1.12'
+    implementation 'com.github.apiverve:chartgenerator-api:1.1.13'
 }
 ```
 
@@ -47,7 +47,13 @@ ChartGeneratorAPIClient client = new ChartGeneratorAPIClient("YOUR_API_KEY");
 try {
     // Prepare request parameters
     Map<String, Object> parameters = new HashMap<>();
-    parameters.put("key", "value");
+    parameters.put("type", "bar");
+    parameters.put("labels", new ArrayList<>());
+    parameters.put("datasets", new ArrayList<>());
+    parameters.put("title", "Quarterly Report");
+    parameters.put("width", 500);
+    parameters.put("height", 300);
+    parameters.put("format", "png");
 
     // Execute the request
     APIResponse response = client.execute(parameters);
@@ -135,7 +141,7 @@ For detailed API documentation, visit: [https://docs.apiverve.com/ref/chartgener
 
 ## Get Your API Key
 
-Get your API key from [https://apiverve.com](https://apiverve.com)
+Get your API key from [https://apiverve.com](https://apiverve.com?utm_source=android&utm_medium=readme)
 
 ---
 
@@ -162,4 +168,4 @@ This SDK is released under the MIT License. See [LICENSE](LICENSE) for details.
 
 ## About APIVerve
 
-[APIVerve](https://apiverve.com) provides production-ready REST APIs for developers. Fast, reliable, and easy to integrate.
+[APIVerve](https://apiverve.com?utm_source=android&utm_medium=readme) provides production-ready REST APIs for developers. Fast, reliable, and easy to integrate.
