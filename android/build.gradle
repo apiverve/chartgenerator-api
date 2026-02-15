@@ -4,7 +4,7 @@ plugins {
 }
 
 group = 'com.apiverve'
-version = '1.1.12'
+version = '1.1.13'
 
 java {
     sourceCompatibility = JavaVersion.VERSION_1_8
@@ -20,13 +20,13 @@ publishing {
         maven(MavenPublication) {
             groupId = 'com.apiverve'
             artifactId = 'chartgenerator-api'
-            version = '1.1.12'
+            version = '1.1.13'
 
             from components.java
 
             pom {
                 name = 'Chart Generator'
-                description = 'Chart Generator is a simple tool for generating charts from data. It returns a URL to the generated image of the chart.'
+                description = 'Chart Generator creates beautiful chart images from your data. Supports bar, line, pie, doughnut, radar, and polar area charts with customizable styling.'
                 url = 'https://apiverve.com'
 
                 licenses {
