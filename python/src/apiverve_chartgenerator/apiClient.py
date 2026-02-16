@@ -23,7 +23,15 @@ class ValidationError(ChartgeneratorAPIClientError):
 
 class ChartgeneratorAPIClient:
     # Validation rules for parameters (generated from schema)
-    VALIDATION_RULES = {"type": {"type": "string", "required": False, "default": "bar"}, "labels": {"type": "array", "required": True}, "datasets": {"type": "array", "required": True}, "title": {"type": "string", "required": False}, "width": {"type": "integer", "required": False, "min": 100, "max": 1024, "default": 500}, "height": {"type": "integer", "required": False, "min": 100, "max": 1024, "default": 300}, "format": {"type": "string", "required": False, "default": "png"}}
+    VALIDATION_RULES = {
+        "type": {"type": "string", "required": False, "default": "bar"},
+        "labels": {"type": "array", "required": True},
+        "datasets": {"type": "array", "required": True},
+        "title": {"type": "string", "required": False},
+        "width": {"type": "integer", "required": False, "min": 100, "max": 1024, "default": 500},
+        "height": {"type": "integer", "required": False, "min": 100, "max": 1024, "default": 300},
+        "format": {"type": "string", "required": False, "default": "png"}
+    }
 
     # Format validation patterns
     FORMAT_PATTERNS = {
@@ -71,18 +79,10 @@ class ChartgeneratorAPIClient:
                 "API key is required. Get your API key at: https://apiverve.com"
             )
 
-        # Check format (alphanumeric, hyphens, and underscores for prefixed keys)
+        # Check format (GUID, prefixed keys like apv_xxx, or alphanumeric)
         if not re.match(r'^[a-zA-Z0-9_-]+$', api_key):
             raise ChartgeneratorAPIClientError(
                 "Invalid API key format. API key should only contain letters, numbers, hyphens, and underscores. "
-                "Get your API key at: https://apiverve.com"
-            )
-
-        # Check length (at least 32 characters without hyphens/underscores)
-        trimmed_key = api_key.replace('-', '').replace('_', '')
-        if len(trimmed_key) < 32:
-            raise ChartgeneratorAPIClientError(
-                "Invalid API key. API key appears to be too short. "
                 "Get your API key at: https://apiverve.com"
             )
 
