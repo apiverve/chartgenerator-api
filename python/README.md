@@ -44,7 +44,10 @@ from apiverve_chartgenerator.apiClient import ChartgeneratorAPIClient
 # Initialize the client with your APIVerve API key
 api = ChartgeneratorAPIClient("[YOUR_API_KEY]")
 
-query = { "type": "bar", "data": { "labels": [ "Q1", "Q2", "Q3", "Q4" ], "datasets": [ { "label": "Users", "data": [ 50, 60, 70, 180 ] }, { "label": "Revenue", "data": [ 100, 200, 300, 400 ] } ] } }
+query = {
+    "type": "bar",
+    "data": {"labels":["Q1","Q2","Q3","Q4"],"datasets":[{"label":"Users","data":[50,60,70,180]},{"label":"Revenue","data":[100,200,300,400]}]}
+}
 
 try:
     # Make the API call
@@ -82,7 +85,10 @@ Using the API client, you can perform requests to the API.
 ###### Define Query
 
 ```python
-query = { "type": "bar", "data": { "labels": [ "Q1", "Q2", "Q3", "Q4" ], "datasets": [ { "label": "Users", "data": [ 50, 60, 70, 180 ] }, { "label": "Revenue", "data": [ 100, 200, 300, 400 ] } ] } }
+query = {
+    "type": "bar",
+    "data": {"labels":["Q1","Q2","Q3","Q4"],"datasets":[{"label":"Users","data":[50,60,70,180]},{"label":"Revenue","data":[100,200,300,400]}]}
+}
 ```
 
 ###### Simple Request
@@ -124,7 +130,10 @@ from apiverve_chartgenerator.apiClient import ChartgeneratorAPIClient, Chartgene
 
 api = ChartgeneratorAPIClient("[YOUR_API_KEY]")
 
-query = { "type": "bar", "data": { "labels": [ "Q1", "Q2", "Q3", "Q4" ], "datasets": [ { "label": "Users", "data": [ 50, 60, 70, 180 ] }, { "label": "Revenue", "data": [ 100, 200, 300, 400 ] } ] } }
+query = {
+    "type": "bar",
+    "data": {"labels":["Q1","Q2","Q3","Q4"],"datasets":[{"label":"Users","data":[50,60,70,180]},{"label":"Revenue","data":[100,200,300,400]}]}
+}
 
 try:
     result = api.execute(query)
@@ -145,7 +154,10 @@ from apiverve_chartgenerator.apiClient import ChartgeneratorAPIClient, Chartgene
 
 api = ChartgeneratorAPIClient("[YOUR_API_KEY]")
 
-query = { "type": "bar", "data": { "labels": [ "Q1", "Q2", "Q3", "Q4" ], "datasets": [ { "label": "Users", "data": [ 50, 60, 70, 180 ] }, { "label": "Revenue", "data": [ 100, 200, 300, 400 ] } ] } }
+query = {
+    "type": "bar",
+    "data": {"labels":["Q1","Q2","Q3","Q4"],"datasets":[{"label":"Users","data":[50,60,70,180]},{"label":"Revenue","data":[100,200,300,400]}]}
+}
 
 try:
     result = api.execute(query)
@@ -179,7 +191,10 @@ The client supports the context manager protocol for automatic resource cleanup:
 ```python
 from apiverve_chartgenerator.apiClient import ChartgeneratorAPIClient, ChartgeneratorAPIClientError
 
-query = { "type": "bar", "data": { "labels": [ "Q1", "Q2", "Q3", "Q4" ], "datasets": [ { "label": "Users", "data": [ 50, 60, 70, 180 ] }, { "label": "Revenue", "data": [ 100, 200, 300, 400 ] } ] } }
+query = {
+    "type": "bar",
+    "data": {"labels":["Q1","Q2","Q3","Q4"],"datasets":[{"label":"Users","data":[50,60,70,180]},{"label":"Revenue","data":[100,200,300,400]}]}
+}
 
 # Using context manager ensures proper cleanup
 with ChartgeneratorAPIClient("[YOUR_API_KEY]") as api:
@@ -205,7 +220,10 @@ from apiverve_chartgenerator.apiClient import ChartgeneratorAPIClient
 # Enable debug mode
 api = ChartgeneratorAPIClient("[YOUR_API_KEY]", debug=True)
 
-query = { "type": "bar", "data": { "labels": [ "Q1", "Q2", "Q3", "Q4" ], "datasets": [ { "label": "Users", "data": [ 50, 60, 70, 180 ] }, { "label": "Revenue", "data": [ 100, 200, 300, 400 ] } ] } }
+query = {
+    "type": "bar",
+    "data": {"labels":["Q1","Q2","Q3","Q4"],"datasets":[{"label":"Users","data":[50,60,70,180]},{"label":"Revenue","data":[100,200,300,400]}]}
+}
 
 # Debug information will be printed to console
 result = api.execute(query)
@@ -220,8 +238,12 @@ from apiverve_chartgenerator.apiClient import ChartgeneratorAPIClient
 
 api = ChartgeneratorAPIClient("[YOUR_API_KEY]")
 
+query = {
+    "type": "bar",
+    "data": {"labels":["Q1","Q2","Q3","Q4"],"datasets":[{"label":"Users","data":[50,60,70,180]},{"label":"Revenue","data":[100,200,300,400]}]}
+}
+
 try:
-    query = { "type": "bar", "data": { "labels": [ "Q1", "Q2", "Q3", "Q4" ], "datasets": [ { "label": "Users", "data": [ 50, 60, 70, 180 ] }, { "label": "Revenue", "data": [ 100, 200, 300, 400 ] } ] } }
     result = api.execute(query)
     print(result)
 finally:
