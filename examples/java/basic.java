@@ -12,8 +12,15 @@ public class BasicExample {
         ChartGeneratorAPIClient client = new ChartGeneratorAPIClient("YOUR_API_KEY_HERE");
 
         try {
-            // Execute the API request (no parameters required)
-            APIResponse response = client.execute(null);
+            // Request body
+            Map&lt;String, Object&gt; parameters &#x3D; new HashMap&lt;&gt;();
+        parameters.put(&quot;type&quot;, &quot;bar&quot;);
+        parameters.put(&quot;labels&quot;, Q1,Q2,Q3,Q4);
+        parameters.put(&quot;datasets&quot;, [object Object],[object Object]);
+        parameters.put(&quot;title&quot;, &quot;Quarterly Report&quot;);
+
+            // Execute the API request
+            APIResponse response = client.execute(parameters);
 
             // Check if the request was successful
             if (response.isSuccess()) {
