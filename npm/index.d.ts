@@ -4,20 +4,32 @@ declare module '@apiverve/chartgenerator' {
     secure?: boolean;
   }
 
+  /**
+   * Describes fields the current plan does not unlock. Locked fields arrive as null
+   * in `data`; `locked_fields` names them, using dot paths for nested fields.
+   * Absent when the plan unlocks everything.
+   */
+  export interface PremiumInfo {
+    message: string;
+    upgrade_url: string;
+    locked_fields: string[];
+  }
+
   export interface chartgeneratorResponse {
     status: string;
     error: string | null;
     data: ChartGeneratorData;
     code?: number;
+    premium?: PremiumInfo;
   }
 
 
   interface ChartGeneratorData {
-      id:          string;
-      format:      string;
-      expires:     number;
-      type:        string;
-      downloadURL: string;
+      id:          null | string;
+      format:      null | string;
+      expires:     number | null;
+      type:        null | string;
+      downloadURL: null | string;
   }
 
   export default class chartgeneratorWrapper {
