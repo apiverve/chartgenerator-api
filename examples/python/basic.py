@@ -14,14 +14,47 @@ API_URL = 'https://api.apiverve.com/v1/chartgenerator'
 
 def call_chartgenerator_api():
     """
-    Make a GET request to the Chart Generator API
+    Make a POST request to the Chart Generator API
     """
     try:
+        # Request body
+        request_body &#x3D; {
+    &#x27;type&#x27;: &#x27;bar&#x27;,
+    &#x27;labels&#x27;: [
+        &#x27;Q1&#x27;,
+        &#x27;Q2&#x27;,
+        &#x27;Q3&#x27;,
+        &#x27;Q4&#x27;
+    ],
+    &#x27;datasets&#x27;: [
+        {
+            &#x27;name&#x27;: &#x27;Sales&#x27;,
+            &#x27;values&#x27;: [
+                50,
+                60,
+                70,
+                180
+            ]
+        },
+        {
+            &#x27;name&#x27;: &#x27;Revenue&#x27;,
+            &#x27;values&#x27;: [
+                100,
+                200,
+                300,
+                400
+            ]
+        }
+    ],
+    &#x27;title&#x27;: &#x27;Quarterly Report&#x27;
+}
+
         headers = {
-            'x-api-key': API_KEY
+            'x-api-key': API_KEY,
+            'Content-Type': 'application/json'
         }
 
-        response = requests.get(API_URL, headers=headers)
+        response = requests.post(API_URL, headers=headers, json=request_body)
 
         # Raise exception for HTTP errors
         response.raise_for_status()
