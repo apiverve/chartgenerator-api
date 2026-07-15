@@ -16,34 +16,33 @@ const api = new chartgeneratorAPI({
 // Example query
 var query = {
   "type": "bar",
-  "data": {
-    "labels": [
-      "Q1",
-      "Q2",
-      "Q3",
-      "Q4"
-    ],
-    "datasets": [
-      {
-        "label": "Users",
-        "data": [
-          50,
-          60,
-          70,
-          180
-        ]
-      },
-      {
-        "label": "Revenue",
-        "data": [
-          100,
-          200,
-          300,
-          400
-        ]
-      }
-    ]
-  }
+  "labels": [
+    "Q1",
+    "Q2",
+    "Q3",
+    "Q4"
+  ],
+  "datasets": [
+    {
+      "name": "Sales",
+      "values": [
+        50,
+        60,
+        70,
+        180
+      ]
+    },
+    {
+      "name": "Revenue",
+      "values": [
+        100,
+        200,
+        300,
+        400
+      ]
+    }
+  ],
+  "title": "Quarterly Report"
 };
 
 // Make the API request using callback
