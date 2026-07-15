@@ -20,7 +20,7 @@ namespace APIVerve.Examples
         private static readonly string API_URL = "https://api.apiverve.com/v1/chartgenerator";
 
         /// <summary>
-        /// Make a GET request to the Chart Generator API
+        /// Make a POST request to the Chart Generator API
         /// </summary>
         static async Task<JsonDocument> CallChartGeneratorAPI()
         {
@@ -29,7 +29,13 @@ namespace APIVerve.Examples
                 using var client = new HttpClient();
                 client.DefaultRequestHeaders.Add("x-api-key", API_KEY);
 
-                var response = await client.GetAsync(API_URL);
+                // Request body
+                var requestBody &#x3D; new { type &#x3D; &quot;bar&quot;, labels &#x3D; Q1,Q2,Q3,Q4, datasets &#x3D; [object Object],[object Object], title &#x3D; &quot;Quarterly Report&quot; };
+
+                var jsonContent = JsonSerializer.Serialize(requestBody);
+                var content = new StringContent(jsonContent, Encoding.UTF8, "application/json");
+
+                var response = await client.PostAsync(API_URL, content);
 
                 // Check if response is successful
                 response.EnsureSuccessStatusCode();
