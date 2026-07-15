@@ -8,7 +8,7 @@ The Chart Generator API provides a simple, reliable way to integrate chart gener
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://chartgenerator.apiverve.com?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
-[![Method](https://img.shields.io/badge/Method-GET-blue.svg)](#)
+[![Method](https://img.shields.io/badge/Method-POST-blue.svg)](#)
 [![Platform](https://img.shields.io/badge/Platform-Multi--Platform-orange.svg)](#installation)
 
 **Available on:**
@@ -30,11 +30,44 @@ The Chart Generator API provides a simple, reliable way to integrate chart gener
 ```javascript
 async function callChartGeneratorAPI() {
     try {
+        const requestBody = {
+    "type": "bar",
+    "labels": [
+        "Q1",
+        "Q2",
+        "Q3",
+        "Q4"
+    ],
+    "datasets": [
+        {
+            "name": "Sales",
+            "values": [
+                50,
+                60,
+                70,
+                180
+            ]
+        },
+        {
+            "name": "Revenue",
+            "values": [
+                100,
+                200,
+                300,
+                400
+            ]
+        }
+    ],
+    "title": "Quarterly Report"
+};
+
         const response = await fetch('https://api.apiverve.com/v1/chartgenerator', {
-            method: 'GET',
+            method: 'POST',
             headers: {
-                'x-api-key': 'YOUR_API_KEY_HERE'
-            }
+                'x-api-key': 'YOUR_API_KEY_HERE',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(requestBody)
         });
 
         const data = await response.json();
@@ -50,8 +83,39 @@ callChartGeneratorAPI();
 ### Using cURL
 
 ```bash
-curl -X GET "https://api.apiverve.com/v1/chartgenerator?param=value" \
-  -H "x-api-key: YOUR_API_KEY_HERE"
+curl -X POST "https://api.apiverve.com/v1/chartgenerator" \
+  -H "x-api-key: YOUR_API_KEY_HERE" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "type": "bar",
+    "labels": [
+        "Q1",
+        "Q2",
+        "Q3",
+        "Q4"
+    ],
+    "datasets": [
+        {
+            "name": "Sales",
+            "values": [
+                50,
+                60,
+                70,
+                180
+            ]
+        },
+        {
+            "name": "Revenue",
+            "values": [
+                100,
+                200,
+                300,
+                400
+            ]
+        }
+    ],
+    "title": "Quarterly Report"
+}'
 ```
 
 **Get your API key:** [https://apiverve.com](https://apiverve.com)
@@ -150,7 +214,7 @@ go get github.com/apiverve/chartgenerator-api/go
 |---------|---------|
 | **Multi-language SDKs** | Native packages for JavaScript, Python, C#, Go, and Android |
 | **Simple Integration** | Single API key authentication, consistent response format |
-| **Production Ready** | 99.9% uptime, fast response times, used by thousands of developers |
+| **Production Ready** | 99.9% uptime SLA, served from 24 global regions |
 | **Comprehensive Docs** | Full examples, OpenAPI spec, and dedicated support |
 
 ---
@@ -169,7 +233,7 @@ go get github.com/apiverve/chartgenerator-api/go
 The Chart Generator API is commonly used for:
 
 - **Web Applications** - Add chart generator features to your frontend or backend
-- **Mobile Apps** - Native SDKs for iOS and Android development
+- **Mobile Apps** - Native SDKs for Android development
 - **Automation** - Integrate with n8n, Zapier, or custom workflows
 - **SaaS Products** - Enhance your product with chart generator capabilities
 - **Data Pipelines** - Process and analyze data at scale
