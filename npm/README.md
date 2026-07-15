@@ -61,34 +61,33 @@ Using the API is simple. All you have to do is make a request. The API will retu
 ```javascript
 var query = {
   "type": "bar",
-  "data": {
-    "labels": [
-      "Q1",
-      "Q2",
-      "Q3",
-      "Q4"
-    ],
-    "datasets": [
-      {
-        "label": "Users",
-        "data": [
-          50,
-          60,
-          70,
-          180
-        ]
-      },
-      {
-        "label": "Revenue",
-        "data": [
-          100,
-          200,
-          300,
-          400
-        ]
-      }
-    ]
-  }
+  "labels": [
+    "Q1",
+    "Q2",
+    "Q3",
+    "Q4"
+  ],
+  "datasets": [
+    {
+      "name": "Sales",
+      "values": [
+        50,
+        60,
+        70,
+        180
+      ]
+    },
+    {
+      "name": "Revenue",
+      "values": [
+        100,
+        200,
+        300,
+        400
+      ]
+    }
+  ],
+  "title": "Quarterly Report"
 };
 
 api.execute(query, function (error, data) {
@@ -109,34 +108,33 @@ You can also use promises to make requests. The API returns a promise that you c
 ```javascript
 var query = {
   "type": "bar",
-  "data": {
-    "labels": [
-      "Q1",
-      "Q2",
-      "Q3",
-      "Q4"
-    ],
-    "datasets": [
-      {
-        "label": "Users",
-        "data": [
-          50,
-          60,
-          70,
-          180
-        ]
-      },
-      {
-        "label": "Revenue",
-        "data": [
-          100,
-          200,
-          300,
-          400
-        ]
-      }
-    ]
-  }
+  "labels": [
+    "Q1",
+    "Q2",
+    "Q3",
+    "Q4"
+  ],
+  "datasets": [
+    {
+      "name": "Sales",
+      "values": [
+        50,
+        60,
+        70,
+        180
+      ]
+    },
+    {
+      "name": "Revenue",
+      "values": [
+        100,
+        200,
+        300,
+        400
+      ]
+    }
+  ],
+  "title": "Quarterly Report"
 };
 
 api.execute(query)
@@ -158,34 +156,33 @@ You can also use async/await to make requests. The API returns a promise that yo
 async function makeRequest() {
     var query = {
   "type": "bar",
-  "data": {
-    "labels": [
-      "Q1",
-      "Q2",
-      "Q3",
-      "Q4"
-    ],
-    "datasets": [
-      {
-        "label": "Users",
-        "data": [
-          50,
-          60,
-          70,
-          180
-        ]
-      },
-      {
-        "label": "Revenue",
-        "data": [
-          100,
-          200,
-          300,
-          400
-        ]
-      }
-    ]
-  }
+  "labels": [
+    "Q1",
+    "Q2",
+    "Q3",
+    "Q4"
+  ],
+  "datasets": [
+    {
+      "name": "Sales",
+      "values": [
+        50,
+        60,
+        70,
+        180
+      ]
+    },
+    {
+      "name": "Revenue",
+      "values": [
+        100,
+        200,
+        300,
+        400
+      ]
+    }
+  ],
+  "title": "Quarterly Report"
 };
 
     try {
@@ -206,11 +203,11 @@ async function makeRequest() {
   "status": "ok",
   "error": null,
   "data": {
-    "id": "15e899a6-5eec-40ca-a617-4480f5a801c8",
+    "id": "6a783c9c-f959-4a88-80cb-84580b8c788d",
     "format": ".png",
-    "expires": 1740173365411,
+    "expires": 1766010059346,
     "type": "bar",
-    "downloadURL": "https://storage.googleapis.com/apiverve.appspot.com/chartgenerator/15e899a6-5eec-40ca-a617-4480f5a801c8.png?GoogleAccessId=635500398038-compute%40developer.gserviceaccount.com&Expires=1740173365&Signature=BlQo5Pp0YfG9MmKGKHtvbULtYPA5jenQ14ZYrKzqZRKGVz9yiiEsVaRq0XsVFj2fM5pSZ8NRcT%2FZj%2FtIHTFid6jxjp6PPdZmO%2Fu9uNKjS5b204U0xQxtg%2F9t6TIzk%2BzthmV0JZl8xeZph6B4htBUrZWv7gVW0RDbnHnQPfXcoqKW8CMRmN%2F9crjQNtCqpvdPMS4VMYbCoqDFpLj2SaRqitYhzK9oyA6GNQ9ZyQoM0wGJrXnyYLGq5uq00xWs9hql%2FSzehgAKJj%2BrtE%2F0%2FGfBB3zFbgzolggYQKxrj6I%2FusvO%2F3Ng5UO84Bbz%2BIqQcZr7BAUW1mF49096fYhplEOayg%3D%3D"
+    "downloadURL": "https://storage.googleapis.com/apiverve/APIData/chartgenerator/6a783c9c-f959-4a88-80cb-84580b8c788d.png?GoogleAccessId=635500398038-compute%40developer.gserviceaccount.com&Expires=1766010059&Signature=Iud%2B7hoPRtPbWoJXQAAnhN9nqUHObHQ7PaiJCtkWQzEzpMexPMRR3BIPKkwOUMAwT6YcNbvywgnLvU2SV7498rbp%2FZbktuAR3Ok1E3O6p4ZJJ4s%2FpW8HAZgIBJpDlPUQt%2FjulQLtwP2I2GUPVmgWheXitnWsWq1S3E2k4viysXwS8H2%2B8BBdxjS%2Bv1ruGXbqd4RpdzdLst4e9YtHGWNZuiaL8zX8%2FHA1zreyrewY2fpB4g0pHnh%2B3IDE48eIohb4HQoDc9vXy4s8sIoqLScmTLyxyq1pPYlak1n1PWdbLcz4TBr41JnLELzF%2BBwCkyrLts9dhisSseaIB7d4g4JQnw%3D%3D"
   }
 }
 ```
