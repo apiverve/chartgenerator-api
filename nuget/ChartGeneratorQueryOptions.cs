@@ -20,13 +20,13 @@ namespace APIVerve.API.ChartGenerator
         /// Array of labels for the x-axis or chart segments
         /// </summary>
         [JsonProperty("labels")]
-        public string Labels { get; set; }
+        public List<string> Labels { get; set; }
 
         /// <summary>
         /// Array of datasets with 'name' and 'values'
         /// </summary>
         [JsonProperty("datasets")]
-        public string Datasets { get; set; }
+        public List<string> Datasets { get; set; }
 
         /// <summary>
         /// Optional title displayed on the chart
@@ -38,13 +38,13 @@ namespace APIVerve.API.ChartGenerator
         /// Image width in pixels
         /// </summary>
         [JsonProperty("width")]
-        public string Width { get; set; }
+        public int? Width { get; set; }
 
         /// <summary>
         /// Image height in pixels
         /// </summary>
         [JsonProperty("height")]
-        public string Height { get; set; }
+        public int? Height { get; set; }
 
         /// <summary>
         /// Output format
