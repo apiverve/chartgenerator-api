@@ -1,7 +1,7 @@
 {
   "name": "@apiverve/chartgenerator",
-  "version": "1.2.0",
-  "description": "Chart Generator creates beautiful chart images from your data. Supports bar, line, pie, doughnut, radar, and polar area charts with customizable styling.",
+  "version": "1.2.1",
+  "description": "Chart Generator is a chart API that turns your data into chart and graph images. Supports bar, line, pie, doughnut, radar, and polar area charts with customizable styling.",
   "main": "index.js",
   "types": "index.d.ts",
   "sideEffects": false,
@@ -23,7 +23,7 @@
     "directory": "npm"
   },
   "keywords": [
-    "chart generator", "chart api", "bar chart api", "line chart api", "pie chart api"
+    "chart api", "bar chart api", "charts api", "chart generator api", "free chart api"
   ],
   "author": {
     "name": "APIVerve",
@@ -34,7 +34,7 @@
   "bugs": {
     "url": "https://github.com/apiverve/chartgenerator-api/issues"
   },
-  "homepage": "https://chartgenerator.apiverve.com?utm_source=npm&utm_medium=homepage",
+  "homepage": "https://apiverve.com/marketplace/chartgenerator?utm_source=npm&utm_medium=referral&utm_content=homepage",
   "devDependencies": {
     "mocha": "^11.0.1",
     "chai": "^5.1.2",
