@@ -1,13 +1,12 @@
-ChartGenerator API
+Chart Generator API
 ============
 
-Chart Generator creates beautiful chart images from your data. Supports bar, line, pie, doughnut, radar, and polar area charts with customizable styling.
+Chart Generator is a chart API that turns your data into chart and graph images. Supports bar, line, pie, doughnut, radar, and polar area charts with customizable styling.
 
-![Build Status](https://img.shields.io/badge/build-passing-green)
-![Code Climate](https://img.shields.io/badge/maintainability-B-purple)
-![Prod Ready](https://img.shields.io/badge/production-ready-blue)
 
-This is a .NET Wrapper for the [ChartGenerator API](https://chartgenerator.apiverve.com?utm_source=nuget&utm_medium=readme)
+[![NuGet version](https://img.shields.io/nuget/v/APIVerve.API.ChartGenerator.svg)](https://www.nuget.org/packages/APIVerve.API.ChartGenerator)
+
+This is a .NET wrapper for the [Chart Generator API](https://apiverve.com/marketplace/chartgenerator?utm_source=nuget&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -40,8 +39,8 @@ From within Visual Studio:
 
 ## Configuration
 
-Before using the chartgenerator API client, you have to setup your account and obtain your API Key.
-You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=nuget&utm_medium=readme)
+Before using the Chart Generator API client, you have to setup your account and obtain your API Key.
+You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=nuget&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -61,35 +60,11 @@ class Program
         var apiClient = new ChartGeneratorAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new ChartGeneratorQueryOptions {
-    type = "bar",
-    labels = [
-        "Q1",
-        "Q2",
-        "Q3",
-        "Q4"
-    ],
-    datasets = [
-        {
-            name = "Sales",
-            values = [
-                50,
-                60,
-                70,
-                180
-            ]
-        },
-        {
-            name = "Revenue",
-            values = [
-                100,
-                200,
-                300,
-                400
-            ]
-        }
-    ],
-    title = "Quarterly Report"
-};
+            Type = "bar",
+            Labels = new List<string> { "Q1", "Q2", "Q3", "Q4" },
+            Datasets = Newtonsoft.Json.Linq.JToken.Parse(@"[{""name"":""Sales"",""values"":[50,60,70,180]},{""name"":""Revenue"",""values"":[100,200,300,400]}]"),
+            Title = "Quarterly Report"
+        };
 
         // Make the API call
         try
@@ -119,13 +94,13 @@ class Program
 
 ## Usage
 
-The ChartGenerator API documentation is found here: [https://docs.apiverve.com/ref/chartgenerator](https://docs.apiverve.com/ref/chartgenerator?utm_source=nuget&utm_medium=readme).
+The Chart Generator API documentation is found here: [https://docs.apiverve.com/ref/chartgenerator](https://docs.apiverve.com/ref/chartgenerator?utm_source=nuget&utm_medium=referral&utm_content=readme).
 You can find parameters, example responses, and status codes documented here.
 
 ### Setup
 
 ###### Authentication
-ChartGenerator API uses API Key-based authentication. When you create an instance of the API client, you can pass your API Key as a parameter.
+Chart Generator API uses API Key-based authentication. When you create an instance of the API client, you can pass your API Key as a parameter.
 
 ```csharp
 // Create an instance of the API client
@@ -152,35 +127,11 @@ public class Example
         var apiClient = new ChartGeneratorAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new ChartGeneratorQueryOptions {
-    type = "bar",
-    labels = [
-        "Q1",
-        "Q2",
-        "Q3",
-        "Q4"
-    ],
-    datasets = [
-        {
-            name = "Sales",
-            values = [
-                50,
-                60,
-                70,
-                180
-            ]
-        },
-        {
-            name = "Revenue",
-            values = [
-                100,
-                200,
-                300,
-                400
-            ]
-        }
-    ],
-    title = "Quarterly Report"
-};
+            Type = "bar",
+            Labels = new List<string> { "Q1", "Q2", "Q3", "Q4" },
+            Datasets = Newtonsoft.Json.Linq.JToken.Parse(@"[{""name"":""Sales"",""values"":[50,60,70,180]},{""name"":""Revenue"",""values"":[100,200,300,400]}]"),
+            Title = "Quarterly Report"
+        };
 
         var response = await apiClient.ExecuteAsync(queryOptions);
 
@@ -211,35 +162,11 @@ public class Example
         var apiClient = new ChartGeneratorAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new ChartGeneratorQueryOptions {
-    type = "bar",
-    labels = [
-        "Q1",
-        "Q2",
-        "Q3",
-        "Q4"
-    ],
-    datasets = [
-        {
-            name = "Sales",
-            values = [
-                50,
-                60,
-                70,
-                180
-            ]
-        },
-        {
-            name = "Revenue",
-            values = [
-                100,
-                200,
-                300,
-                400
-            ]
-        }
-    ],
-    title = "Quarterly Report"
-};
+            Type = "bar",
+            Labels = new List<string> { "Q1", "Q2", "Q3", "Q4" },
+            Datasets = Newtonsoft.Json.Linq.JToken.Parse(@"[{""name"":""Sales"",""values"":[50,60,70,180]},{""name"":""Revenue"",""values"":[100,200,300,400]}]"),
+            Title = "Quarterly Report"
+        };
 
         var response = apiClient.Execute(queryOptions);
 
@@ -275,35 +202,11 @@ public class Example
         var apiClient = new ChartGeneratorAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new ChartGeneratorQueryOptions {
-    type = "bar",
-    labels = [
-        "Q1",
-        "Q2",
-        "Q3",
-        "Q4"
-    ],
-    datasets = [
-        {
-            name = "Sales",
-            values = [
-                50,
-                60,
-                70,
-                180
-            ]
-        },
-        {
-            name = "Revenue",
-            values = [
-                100,
-                200,
-                300,
-                400
-            ]
-        }
-    ],
-    title = "Quarterly Report"
-};
+            Type = "bar",
+            Labels = new List<string> { "Q1", "Q2", "Q3", "Q4" },
+            Datasets = Newtonsoft.Json.Linq.JToken.Parse(@"[{""name"":""Sales"",""values"":[50,60,70,180]},{""name"":""Revenue"",""values"":[100,200,300,400]}]"),
+            Title = "Quarterly Report"
+        };
 
         try
         {
@@ -358,35 +261,11 @@ public class Example
         apiClient.SetRetryDelay(2000);     // Wait 2 seconds between retries
 
         var queryOptions = new ChartGeneratorQueryOptions {
-    type = "bar",
-    labels = [
-        "Q1",
-        "Q2",
-        "Q3",
-        "Q4"
-    ],
-    datasets = [
-        {
-            name = "Sales",
-            values = [
-                50,
-                60,
-                70,
-                180
-            ]
-        },
-        {
-            name = "Revenue",
-            values = [
-                100,
-                200,
-                300,
-                400
-            ]
-        }
-    ],
-    title = "Quarterly Report"
-};
+            Type = "bar",
+            Labels = new List<string> { "Q1", "Q2", "Q3", "Q4" },
+            Datasets = Newtonsoft.Json.Linq.JToken.Parse(@"[{""name"":""Sales"",""values"":[50,60,70,180]},{""name"":""Revenue"",""values"":[100,200,300,400]}]"),
+            Title = "Quarterly Report"
+        };
 
         try
         {
@@ -426,34 +305,10 @@ apiClient.AddCustomHeader("X-Custom-Header", "custom-value");
 apiClient.AddCustomHeader("X-Request-ID", Guid.NewGuid().ToString());
 
 var queryOptions = new ChartGeneratorQueryOptions {
-    type = "bar",
-    labels = [
-        "Q1",
-        "Q2",
-        "Q3",
-        "Q4"
-    ],
-    datasets = [
-        {
-            name = "Sales",
-            values = [
-                50,
-                60,
-                70,
-                180
-            ]
-        },
-        {
-            name = "Revenue",
-            values = [
-                100,
-                200,
-                300,
-                400
-            ]
-        }
-    ],
-    title = "Quarterly Report"
+    Type = "bar",
+    Labels = new List<string> { "Q1", "Q2", "Q3", "Q4" },
+    Datasets = Newtonsoft.Json.Linq.JToken.Parse(@"[{""name"":""Sales"",""values"":[50,60,70,180]},{""name"":""Revenue"",""values"":[100,200,300,400]}]"),
+    Title = "Quarterly Report"
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -479,34 +334,10 @@ apiClient.SetLogger(message =>
 });
 
 var queryOptions = new ChartGeneratorQueryOptions {
-    type = "bar",
-    labels = [
-        "Q1",
-        "Q2",
-        "Q3",
-        "Q4"
-    ],
-    datasets = [
-        {
-            name = "Sales",
-            values = [
-                50,
-                60,
-                70,
-                180
-            ]
-        },
-        {
-            name = "Revenue",
-            values = [
-                100,
-                200,
-                300,
-                400
-            ]
-        }
-    ],
-    title = "Quarterly Report"
+    Type = "bar",
+    Labels = new List<string> { "Q1", "Q2", "Q3", "Q4" },
+    Datasets = Newtonsoft.Json.Linq.JToken.Parse(@"[{""name"":""Sales"",""values"":[50,60,70,180]},{""name"":""Revenue"",""values"":[100,200,300,400]}]"),
+    Title = "Quarterly Report"
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -524,34 +355,10 @@ apiClient.SetMaxRetries(3);           // Retry up to 3 times (default: 0, max: 3
 apiClient.SetRetryDelay(1500);        // Wait 1.5 seconds between retries (default: 1000ms)
 
 var queryOptions = new ChartGeneratorQueryOptions {
-    type = "bar",
-    labels = [
-        "Q1",
-        "Q2",
-        "Q3",
-        "Q4"
-    ],
-    datasets = [
-        {
-            name = "Sales",
-            values = [
-                50,
-                60,
-                70,
-                180
-            ]
-        },
-        {
-            name = "Revenue",
-            values = [
-                100,
-                200,
-                300,
-                400
-            ]
-        }
-    ],
-    title = "Quarterly Report"
+    Type = "bar",
+    Labels = new List<string> { "Q1", "Q2", "Q3", "Q4" },
+    Datasets = Newtonsoft.Json.Linq.JToken.Parse(@"[{""name"":""Sales"",""values"":[50,60,70,180]},{""name"":""Revenue"",""values"":[100,200,300,400]}]"),
+    Title = "Quarterly Report"
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -563,34 +370,10 @@ The API client implements `IDisposable` for proper resource cleanup:
 
 ```csharp
 var queryOptions = new ChartGeneratorQueryOptions {
-    type = "bar",
-    labels = [
-        "Q1",
-        "Q2",
-        "Q3",
-        "Q4"
-    ],
-    datasets = [
-        {
-            name = "Sales",
-            values = [
-                50,
-                60,
-                70,
-                180
-            ]
-        },
-        {
-            name = "Revenue",
-            values = [
-                100,
-                200,
-                300,
-                400
-            ]
-        }
-    ],
-    title = "Quarterly Report"
+    Type = "bar",
+    Labels = new List<string> { "Q1", "Q2", "Q3", "Q4" },
+    Datasets = Newtonsoft.Json.Linq.JToken.Parse(@"[{""name"":""Sales"",""values"":[50,60,70,180]},{""name"":""Revenue"",""values"":[100,200,300,400]}]"),
+    Title = "Quarterly Report"
 };
 
 using (var apiClient = new ChartGeneratorAPIClient("[YOUR_API_KEY]"))
@@ -623,7 +406,7 @@ using (var apiClient = new ChartGeneratorAPIClient("[YOUR_API_KEY]"))
 
 ## Customer Support
 
-Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=nuget&utm_medium=readme).
+Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=nuget&utm_medium=referral&utm_content=readme).
 
 ---
 
@@ -634,12 +417,12 @@ Stay up to date by following [@apiverveHQ](https://twitter.com/apiverveHQ) on Tw
 
 ## Legal
 
-All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=nuget&utm_medium=readme) and all legal documents and agreements.
+All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=nuget&utm_medium=referral&utm_content=readme) and all legal documents and agreements.
 
 ---
 
 ## License
-Licensed under the The MIT License (MIT)
+Licensed under the MIT License (MIT)
 
 Copyright (&copy;) 2026 APIVerve, and EvlarSoft LLC
 

@@ -26,7 +26,7 @@ namespace APIVerve.API.ChartGenerator
         /// Array of datasets with 'name' and 'values'
         /// </summary>
         [JsonProperty("datasets")]
-        public List<string> Datasets { get; set; }
+        public object Datasets { get; set; }
 
         /// <summary>
         /// Optional title displayed on the chart
