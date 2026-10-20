@@ -1,13 +1,12 @@
 Chart Generator API
 ============
 
-Chart Generator creates beautiful chart images from your data. Supports bar, line, pie, doughnut, radar, and polar area charts with customizable styling.
+Chart Generator is a chart API that turns your data into chart and graph images. Supports bar, line, pie, doughnut, radar, and polar area charts with customizable styling.
 
-![Build Status](https://img.shields.io/badge/build-passing-green)
-![Code Climate](https://img.shields.io/badge/maintainability-B-purple)
-![Prod Ready](https://img.shields.io/badge/production-ready-blue)
 
-This is a Python API Wrapper for the [Chart Generator API](https://chartgenerator.apiverve.com?utm_source=pypi&utm_medium=readme)
+[![PyPI version](https://img.shields.io/pypi/v/apiverve-chartgenerator.svg)](https://pypi.org/project/apiverve-chartgenerator/)
+
+This is a Python wrapper for the [Chart Generator API](https://apiverve.com/marketplace/chartgenerator?utm_source=pypi&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -29,8 +28,8 @@ pip3 install apiverve-chartgenerator
 
 ## Configuration
 
-Before using the chartgenerator API client, you have to setup your account and obtain your API Key.
-You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=pypi&utm_medium=readme)
+Before using the Chart Generator API client, you have to setup your account and obtain your API Key.
+You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=pypi&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -46,7 +45,9 @@ api = ChartgeneratorAPIClient("[YOUR_API_KEY]")
 
 query = {
     "type": "bar",
-    "data": {"labels":["Q1","Q2","Q3","Q4"],"datasets":[{"label":"Users","data":[50,60,70,180]},{"label":"Revenue","data":[100,200,300,400]}]}
+    "labels": ["Q1","Q2","Q3","Q4"],
+    "datasets": [{"name":"Sales","values":[50,60,70,180]},{"name":"Revenue","values":[100,200,300,400]}],
+    "title": "Quarterly Report"
 }
 
 try:
@@ -63,7 +64,7 @@ except Exception as e:
 
 ## Usage
 
-The Chart Generator API documentation is found here: [https://docs.apiverve.com/ref/chartgenerator](https://docs.apiverve.com/ref/chartgenerator?utm_source=pypi&utm_medium=readme).
+The Chart Generator API documentation is found here: [https://docs.apiverve.com/ref/chartgenerator](https://docs.apiverve.com/ref/chartgenerator?utm_source=pypi&utm_medium=referral&utm_content=readme).
 You can find parameters, example responses, and status codes documented here.
 
 ### Setup
@@ -87,7 +88,9 @@ Using the API client, you can perform requests to the API.
 ```python
 query = {
     "type": "bar",
-    "data": {"labels":["Q1","Q2","Q3","Q4"],"datasets":[{"label":"Users","data":[50,60,70,180]},{"label":"Revenue","data":[100,200,300,400]}]}
+    "labels": ["Q1","Q2","Q3","Q4"],
+    "datasets": [{"name":"Sales","values":[50,60,70,180]},{"name":"Revenue","values":[100,200,300,400]}],
+    "title": "Quarterly Report"
 }
 ```
 
@@ -108,11 +111,11 @@ print(result)
   "status": "ok",
   "error": null,
   "data": {
-    "id": "15e899a6-5eec-40ca-a617-4480f5a801c8",
+    "id": "6a783c9c-f959-4a88-80cb-84580b8c788d",
     "format": ".png",
-    "expires": 1740173365411,
+    "expires": 1766010059346,
     "type": "bar",
-    "downloadURL": "https://storage.googleapis.com/apiverve.appspot.com/chartgenerator/15e899a6-5eec-40ca-a617-4480f5a801c8.png?GoogleAccessId=635500398038-compute%40developer.gserviceaccount.com&Expires=1740173365&Signature=BlQo5Pp0YfG9MmKGKHtvbULtYPA5jenQ14ZYrKzqZRKGVz9yiiEsVaRq0XsVFj2fM5pSZ8NRcT%2FZj%2FtIHTFid6jxjp6PPdZmO%2Fu9uNKjS5b204U0xQxtg%2F9t6TIzk%2BzthmV0JZl8xeZph6B4htBUrZWv7gVW0RDbnHnQPfXcoqKW8CMRmN%2F9crjQNtCqpvdPMS4VMYbCoqDFpLj2SaRqitYhzK9oyA6GNQ9ZyQoM0wGJrXnyYLGq5uq00xWs9hql%2FSzehgAKJj%2BrtE%2F0%2FGfBB3zFbgzolggYQKxrj6I%2FusvO%2F3Ng5UO84Bbz%2BIqQcZr7BAUW1mF49096fYhplEOayg%3D%3D"
+    "downloadURL": "https://storage.googleapis.com/apiverve/APIData/chartgenerator/6a783c9c-f959-4a88-80cb-84580b8c788d.png?GoogleAccessId=635500398038-compute%40developer.gserviceaccount.com&Expires=1766010059&Signature=Iud%2B7hoPRtPbWoJXQAAnhN9nqUHObHQ7PaiJCtkWQzEzpMexPMRR3BIPKkwOUMAwT6YcNbvywgnLvU2SV7498rbp%2FZbktuAR3Ok1E3O6p4ZJJ4s%2FpW8HAZgIBJpDlPUQt%2FjulQLtwP2I2GUPVmgWheXitnWsWq1S3E2k4viysXwS8H2%2B8BBdxjS%2Bv1ruGXbqd4RpdzdLst4e9YtHGWNZuiaL8zX8%2FHA1zreyrewY2fpB4g0pHnh%2B3IDE48eIohb4HQoDc9vXy4s8sIoqLScmTLyxyq1pPYlak1n1PWdbLcz4TBr41JnLELzF%2BBwCkyrLts9dhisSseaIB7d4g4JQnw%3D%3D"
   }
 }
 ```
@@ -132,7 +135,9 @@ api = ChartgeneratorAPIClient("[YOUR_API_KEY]")
 
 query = {
     "type": "bar",
-    "data": {"labels":["Q1","Q2","Q3","Q4"],"datasets":[{"label":"Users","data":[50,60,70,180]},{"label":"Revenue","data":[100,200,300,400]}]}
+    "labels": ["Q1","Q2","Q3","Q4"],
+    "datasets": [{"name":"Sales","values":[50,60,70,180]},{"name":"Revenue","values":[100,200,300,400]}],
+    "title": "Quarterly Report"
 }
 
 try:
@@ -156,7 +161,9 @@ api = ChartgeneratorAPIClient("[YOUR_API_KEY]")
 
 query = {
     "type": "bar",
-    "data": {"labels":["Q1","Q2","Q3","Q4"],"datasets":[{"label":"Users","data":[50,60,70,180]},{"label":"Revenue","data":[100,200,300,400]}]}
+    "labels": ["Q1","Q2","Q3","Q4"],
+    "datasets": [{"name":"Sales","values":[50,60,70,180]},{"name":"Revenue","values":[100,200,300,400]}],
+    "title": "Quarterly Report"
 }
 
 try:
@@ -193,7 +200,9 @@ from apiverve_chartgenerator.apiClient import ChartgeneratorAPIClient, Chartgene
 
 query = {
     "type": "bar",
-    "data": {"labels":["Q1","Q2","Q3","Q4"],"datasets":[{"label":"Users","data":[50,60,70,180]},{"label":"Revenue","data":[100,200,300,400]}]}
+    "labels": ["Q1","Q2","Q3","Q4"],
+    "datasets": [{"name":"Sales","values":[50,60,70,180]},{"name":"Revenue","values":[100,200,300,400]}],
+    "title": "Quarterly Report"
 }
 
 # Using context manager ensures proper cleanup
@@ -222,7 +231,9 @@ api = ChartgeneratorAPIClient("[YOUR_API_KEY]", debug=True)
 
 query = {
     "type": "bar",
-    "data": {"labels":["Q1","Q2","Q3","Q4"],"datasets":[{"label":"Users","data":[50,60,70,180]},{"label":"Revenue","data":[100,200,300,400]}]}
+    "labels": ["Q1","Q2","Q3","Q4"],
+    "datasets": [{"name":"Sales","values":[50,60,70,180]},{"name":"Revenue","values":[100,200,300,400]}],
+    "title": "Quarterly Report"
 }
 
 # Debug information will be printed to console
@@ -240,7 +251,9 @@ api = ChartgeneratorAPIClient("[YOUR_API_KEY]")
 
 query = {
     "type": "bar",
-    "data": {"labels":["Q1","Q2","Q3","Q4"],"datasets":[{"label":"Users","data":[50,60,70,180]},{"label":"Revenue","data":[100,200,300,400]}]}
+    "labels": ["Q1","Q2","Q3","Q4"],
+    "datasets": [{"name":"Sales","values":[50,60,70,180]},{"name":"Revenue","values":[100,200,300,400]}],
+    "title": "Quarterly Report"
 }
 
 try:
@@ -255,7 +268,7 @@ finally:
 
 ## Customer Support
 
-Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=pypi&utm_medium=readme).
+Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=pypi&utm_medium=referral&utm_content=readme).
 
 ---
 
@@ -266,12 +279,12 @@ Stay up to date by following [@apiverveHQ](https://twitter.com/apiverveHQ) on Tw
 
 ## Legal
 
-All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=pypi&utm_medium=readme) and all legal documents and agreements.
+All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=pypi&utm_medium=referral&utm_content=readme) and all legal documents and agreements.
 
 ---
 
 ## License
-Licensed under the The MIT License (MIT)
+Licensed under the MIT License (MIT)
 
 Copyright (&copy;) 2026 APIVerve, and EvlarSoft LLC
 
