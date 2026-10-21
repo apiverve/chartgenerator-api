@@ -19,7 +19,7 @@ use APIVerve\Chartgenerator\Exceptions\ValidationException;
  * print_r($response);
  * ```
  *
- * @see https://chartgenerator.apiverve.com?utm_source=php&utm_medium=readme
+ * @see https://apiverve.com/marketplace/chartgenerator?utm_source=php&utm_medium=referral&utm_content=readme
  */
 class Client
 {

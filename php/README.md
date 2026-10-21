@@ -1,6 +1,6 @@
 # Chart Generator API - PHP Package
 
-Chart Generator creates beautiful chart images from your data. Supports bar, line, pie, doughnut, radar, and polar area charts with customizable styling.
+Chart Generator is a chart API that turns your data into chart and graph images. Supports bar, line, pie, doughnut, radar, and polar area charts with customizable styling.
 
 ## Installation
 
@@ -90,11 +90,11 @@ $client = new Client(
 
 ## Documentation
 
-For more information, visit the [API Documentation](https://docs.apiverve.com/ref/chartgenerator?utm_source=packagist&utm_medium=readme).
+For more information, visit the [API Documentation](https://docs.apiverve.com/ref/chartgenerator?utm_source=packagist&utm_medium=referral&utm_content=readme).
 
 ## Support
 
-- Website: [https://chartgenerator.apiverve.com?utm_source=php&utm_medium=readme](https://chartgenerator.apiverve.com?utm_source=php&utm_medium=readme)
+- Website: [https://apiverve.com/marketplace/chartgenerator?utm_source=php&utm_medium=referral&utm_content=readme](https://apiverve.com/marketplace/chartgenerator?utm_source=php&utm_medium=referral&utm_content=readme)
 - Email: hello@apiverve.com
 
 ## License
