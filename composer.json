@@ -1,7 +1,7 @@
 {
     "name": "apiverve/chartgenerator",
-    "description": "Chart Generator creates beautiful chart images from your data. Supports bar, line, pie, doughnut, radar, and polar area charts with customizable styling.",
-    "version": "1.2.0",
+    "description": "Chart Generator is a chart API that turns your data into chart and graph images. Supports bar, line, pie, doughnut, radar, and polar area charts with customizable styling.",
+    "version": "1.2.2",
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -15,13 +15,13 @@
         "api",
         "apiverve",
         "chartgenerator",
-        "chart generator",
         "chart api",
         "bar chart api",
-        "line chart api",
-        "pie chart api"
+        "charts api",
+        "chart generator api",
+        "free chart api"
     ],
-    "homepage": "https://chartgenerator.apiverve.com?utm_source=php&utm_medium=homepage",
+    "homepage": "https://apiverve.com/marketplace/chartgenerator?utm_source=php&utm_medium=referral&utm_content=homepage",
     "support": {
         "email": "hello@apiverve.com",
         "docs": "https://docs.apiverve.com/ref/chartgenerator",
