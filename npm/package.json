@@ -1,6 +1,6 @@
 {
   "name": "@apiverve/chartgenerator",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Chart Generator is a chart API that turns your data into chart and graph images. Supports bar, line, pie, doughnut, radar, and polar area charts with customizable styling.",
   "main": "index.js",
   "types": "index.d.ts",
