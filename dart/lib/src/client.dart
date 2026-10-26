@@ -46,7 +46,7 @@ final _formatPatterns = {
 
 /// Chart Generator API client.
 ///
-/// For more information, visit: https://chartgenerator.apiverve.com?utm_source=dart&utm_medium=readme
+/// For more information, visit: https://apiverve.com/marketplace/chartgenerator?utm_source=dart&utm_medium=referral&utm_content=readme
 ///
 /// Parameters:
 /// * [type] - Chart type
