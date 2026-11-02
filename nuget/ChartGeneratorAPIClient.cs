@@ -68,12 +68,13 @@ namespace APIVerve.API.ChartGenerator
         private static readonly Dictionary<string, ValidationRule> _validationRules = new Dictionary<string, ValidationRule>
         {
             { "type", new ValidationRule { Type = "string", Required = false } },
-            { "labels", new ValidationRule { Type = "array", Required = true } },
+            { "labels", new ValidationRule { Type = "array", Required = false } },
             { "datasets", new ValidationRule { Type = "array", Required = true } },
             { "title", new ValidationRule { Type = "string", Required = false } },
             { "width", new ValidationRule { Type = "integer", Required = false, Min = 100, Max = 1024 } },
             { "height", new ValidationRule { Type = "integer", Required = false, Min = 100, Max = 1024 } },
-            { "format", new ValidationRule { Type = "string", Required = false } }
+            { "format", new ValidationRule { Type = "string", Required = false } },
+            { "backgroundColor", new ValidationRule { Type = "string", Required = false } }
         };
 
         /// <summary>Format validation patterns</summary>

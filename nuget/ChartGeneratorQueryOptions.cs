@@ -17,10 +17,10 @@ namespace APIVerve.API.ChartGenerator
         public string Type { get; set; }
 
         /// <summary>
-        /// Array of labels for the x-axis or chart segments
+        /// Array of labels for the x-axis or chart segments. Required except for scatter and bubble charts, whose points carry their own x values
         /// </summary>
         [JsonProperty("labels")]
-        public List<string> Labels { get; set; }
+        public List<string>? Labels { get; set; }
 
         /// <summary>
         /// Array of datasets with 'name' and 'values'
@@ -51,5 +51,11 @@ namespace APIVerve.API.ChartGenerator
         /// </summary>
         [JsonProperty("format")]
         public string Format { get; set; }
+
+        /// <summary>
+        /// Canvas background: a colour name, #hex, rgb()/rgba(), or transparent (PNG and SVG only; JPEG falls back to white). Defaults to white
+        /// </summary>
+        [JsonProperty("backgroundColor")]
+        public string BackgroundColor { get; set; }
     }
 }
