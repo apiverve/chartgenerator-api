@@ -81,20 +81,20 @@ class ChartgeneratorData {
 
 class ChartgeneratorRequest {
   String? type;
-  List<String> labels;
+  List<String>? labels;
   List<Map<String, dynamic>> datasets;
   String? title;
 
   ChartgeneratorRequest({
     this.type,
-    required this.labels,
+    this.labels,
     required this.datasets,
     this.title,
   });
 
   Map<String, dynamic> toJson() => {
       if (type != null) 'type': type,
-      'labels': labels,
+      if (labels != null) 'labels': labels,
       'datasets': datasets,
       if (title != null) 'title': title,
     };

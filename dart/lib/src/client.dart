@@ -50,12 +50,13 @@ final _formatPatterns = {
 ///
 /// Parameters:
 /// * [type] - Chart type
-/// * [labels] (required) - Array of labels for the x-axis or chart segments
+/// * [labels] - Array of labels for the x-axis or chart segments. Required except for scatter and bubble charts, whose points carry their own x values
 /// * [datasets] (required) - Array of datasets with 'name' and 'values'
 /// * [title] - Optional title displayed on the chart
 /// * [width] - Image width in pixels [min: 100, max: 1024]
 /// * [height] - Image height in pixels [min: 100, max: 1024]
 /// * [format] - Output format
+/// * [backgroundColor] - Canvas background: a colour name, #hex, rgb()/rgba(), or transparent (PNG and SVG only; JPEG falls back to white). Defaults to white
 class ChartgeneratorClient {
   final String apiKey;
   final String baseUrl;
@@ -64,12 +65,13 @@ class ChartgeneratorClient {
   /// Validation rules for parameters.
   static final Map<String, ValidationRule> _validationRules = <String, ValidationRule>{
     'type': ValidationRule(type: 'string', required: false),
-    'labels': ValidationRule(type: 'array', required: true),
+    'labels': ValidationRule(type: 'array', required: false),
     'datasets': ValidationRule(type: 'array', required: true),
     'title': ValidationRule(type: 'string', required: false),
     'width': ValidationRule(type: 'integer', required: false, min: 100, max: 1024),
     'height': ValidationRule(type: 'integer', required: false, min: 100, max: 1024),
     'format': ValidationRule(type: 'string', required: false),
+    'backgroundColor': ValidationRule(type: 'string', required: false),
   };
 
   ChartgeneratorClient(this.apiKey, {

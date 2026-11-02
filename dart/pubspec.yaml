@@ -1,6 +1,6 @@
 name: apiverve_chartgenerator
-description: "Chart Generator is a chart API that turns your data into chart and graph images. Supports bar, line, pie, doughnut, radar, and polar area charts with customizable styling."
-version: 1.2.3
+description: "Chart Generator is a chart API that turns your data into chart and graph images. Supports bar, line, pie, doughnut, radar, polar area, scatter and bubble charts with customizable styling."
+version: 1.2.4
 homepage: https://apiverve.com/marketplace/chartgenerator?utm_source=dart&utm_medium=referral&utm_content=homepage
 repository: https://github.com/apiverve/chartgenerator-api/tree/main/dart
 

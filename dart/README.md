@@ -1,6 +1,6 @@
 # Chart Generator API - Dart/Flutter Client
 
-Chart Generator is a chart API that turns your data into chart and graph images. Supports bar, line, pie, doughnut, radar, and polar area charts with customizable styling.
+Chart Generator is a chart API that turns your data into chart and graph images. Supports bar, line, pie, doughnut, radar, polar area, scatter and bubble charts with customizable styling.
 
 [![pub package](https://img.shields.io/pub/v/apiverve_chartgenerator.svg)](https://pub.dev/packages/apiverve_chartgenerator)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -13,7 +13,7 @@ Add this to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  apiverve_chartgenerator: ^1.2.3
+  apiverve_chartgenerator: ^1.2.4
 ```
 
 Then run:
