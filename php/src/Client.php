@@ -35,12 +35,13 @@ class Client
      */
     private const VALIDATION_RULES = [
         'type' => ['type' => 'string', 'required' => false],
-        'labels' => ['type' => 'array', 'required' => true],
+        'labels' => ['type' => 'array', 'required' => false],
         'datasets' => ['type' => 'array', 'required' => true],
         'title' => ['type' => 'string', 'required' => false],
         'width' => ['type' => 'integer', 'required' => false, 'min' => 100, 'max' => 1024],
         'height' => ['type' => 'integer', 'required' => false, 'min' => 100, 'max' => 1024],
-        'format' => ['type' => 'string', 'required' => false]
+        'format' => ['type' => 'string', 'required' => false],
+        'backgroundColor' => ['type' => 'string', 'required' => false]
     ];
 
     /**
