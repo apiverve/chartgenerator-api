@@ -1,6 +1,6 @@
 # [Chart Generator API](https://apiverve.com/marketplace/chartgenerator?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 
-Chart Generator is a chart API that turns your data into chart and graph images. Supports bar, line, pie, doughnut, radar, and polar area charts with customizable styling.
+Chart Generator is a chart API that turns your data into chart and graph images. Supports bar, line, pie, doughnut, radar, polar area, scatter and bubble charts with customizable styling.
 
 The Chart Generator API provides a simple, reliable way to integrate chart generator functionality into your applications. Built for developers who need production-ready chart generator capabilities without the complexity of building from scratch.
 

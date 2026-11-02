@@ -3,8 +3,8 @@ info:
   title: Chart Generator
   description: >-
     Chart Generator is a chart API that turns your data into chart and graph
-    images. Supports bar, line, pie, doughnut, radar, and polar area charts with
-    customizable styling.
+    images. Supports bar, line, pie, doughnut, radar, polar area, scatter and
+    bubble charts with customizable styling.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
@@ -69,7 +69,10 @@ paths:
                   description: Chart type
                 labels:
                   type: string
-                  description: Array of labels for the x-axis or chart segments
+                  description: >-
+                    Array of labels for the x-axis or chart segments. Required
+                    except for scatter and bubble charts, whose points carry
+                    their own x values
                 datasets:
                   type: string
                   description: Array of datasets with 'name' and 'values'
@@ -85,8 +88,13 @@ paths:
                 format:
                   type: string
                   description: Output format
+                backgroundColor:
+                  type: string
+                  description: >-
+                    Canvas background: a colour name, #hex, rgb()/rgba(), or
+                    transparent (PNG and SVG only; JPEG falls back to white).
+                    Defaults to white
               required:
-                - labels
                 - datasets
 components:
   securitySchemes:
