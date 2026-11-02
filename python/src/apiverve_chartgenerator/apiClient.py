@@ -25,12 +25,13 @@ class ChartgeneratorAPIClient:
     # Validation rules for parameters (generated from schema)
     VALIDATION_RULES = {
         "type": {"type": "string", "required": False, "default": "bar"},
-        "labels": {"type": "array", "required": True},
+        "labels": {"type": "array", "required": False},
         "datasets": {"type": "array", "required": True},
         "title": {"type": "string", "required": False},
         "width": {"type": "integer", "required": False, "min": 100, "max": 1024, "default": 500},
         "height": {"type": "integer", "required": False, "min": 100, "max": 1024, "default": 300},
-        "format": {"type": "string", "required": False, "default": "png"}
+        "format": {"type": "string", "required": False, "default": "png"},
+        "backgroundColor": {"type": "string", "required": False, "default": "white"}
     }
 
     # Format validation patterns

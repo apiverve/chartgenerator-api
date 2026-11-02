@@ -2,14 +2,14 @@ from setuptools import setup, find_packages
 
 setup(
     name='apiverve_chartgenerator',
-    version='1.2.3',
+    version='1.2.4',
     packages=find_packages(),
     include_package_data=True,
     install_requires=[
         'requests',
         'setuptools'
     ],
-    description='Chart Generator is a chart API that turns your data into chart and graph images. Supports bar, line, pie, doughnut, radar, and polar area charts with customizable styling.',
+    description='Chart Generator is a chart API that turns your data into chart and graph images. Supports bar, line, pie, doughnut, radar, polar area, scatter and bubble charts with customizable styling.',
     author='APIVerve',
     author_email='hello@apiverve.com',
     url='https://apiverve.com/marketplace/chartgenerator?utm_source=pypi&utm_medium=referral&utm_content=homepage',

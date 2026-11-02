@@ -1,10 +1,10 @@
 [project]
 name = "apiverve-chartgenerator"
-version = "1.2.3"
+version = "1.2.4"
 authors = [
   { name="APIVerve", email="hello@apiverve.com" },
 ]
-description = "Chart Generator is a chart API that turns your data into chart and graph images. Supports bar, line, pie, doughnut, radar, and polar area charts with customizable styling."
+description = "Chart Generator is a chart API that turns your data into chart and graph images. Supports bar, line, pie, doughnut, radar, polar area, scatter and bubble charts with customizable styling."
 keywords = ["chart api", "bar chart api", "charts api", "chart generator api", "free chart api"]
 readme = "README.md"
 requires-python = ">=3.9"
