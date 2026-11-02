@@ -1,6 +1,6 @@
 # Chart Generator API - Ruby Gem
 
-Chart Generator is a chart API that turns your data into chart and graph images. Supports bar, line, pie, doughnut, radar, and polar area charts with customizable styling.
+Chart Generator is a chart API that turns your data into chart and graph images. Supports bar, line, pie, doughnut, radar, polar area, scatter and bubble charts with customizable styling.
 
 ## Installation
 
