@@ -30,7 +30,7 @@ class chartgeneratorWrapper {
         this.baseURL = 'https://api.apiverve.com/v1/chartgenerator';
 
         // Validation rules for parameters (generated from schema)
-        this.validationRules = {"type":{"type":"string","required":false,"default":"bar"},"labels":{"type":"array","required":true},"datasets":{"type":"array","required":true},"title":{"type":"string","required":false},"width":{"type":"integer","required":false,"min":100,"max":1024,"default":500},"height":{"type":"integer","required":false,"min":100,"max":1024,"default":300},"format":{"type":"string","required":false,"default":"png"}};
+        this.validationRules = {"type":{"type":"string","required":false,"default":"bar"},"labels":{"type":"array","required":false},"datasets":{"type":"array","required":true},"title":{"type":"string","required":false},"width":{"type":"integer","required":false,"min":100,"max":1024,"default":500},"height":{"type":"integer","required":false,"min":100,"max":1024,"default":300},"format":{"type":"string","required":false,"default":"png"},"backgroundColor":{"type":"string","required":false,"default":"white"}};
     }
 
     /**

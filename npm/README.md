@@ -1,6 +1,6 @@
 # Chart Generator API
 
-Chart Generator is a chart API that turns your data into chart and graph images. Supports bar, line, pie, doughnut, radar, and polar area charts with customizable styling.
+Chart Generator is a chart API that turns your data into chart and graph images. Supports bar, line, pie, doughnut, radar, polar area, scatter and bubble charts with customizable styling.
 
 [![npm version](https://img.shields.io/npm/v/@apiverve/chartgenerator.svg)](https://www.npmjs.com/package/@apiverve/chartgenerator)
 
